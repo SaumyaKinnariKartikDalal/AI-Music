@@ -6,7 +6,6 @@ leftwristy = 0;
 rightwristy = 0;
 scorelw = 0;
 scorerw = 0;
-sstatus = 0;
 
 function preload() {
     song1 = loadSound("music.mp3");
@@ -26,17 +25,14 @@ function setup() {
 
 function draw() {
     image(video, 0, 0, 600, 500);
-
-
-
     if (scorelw > 0.2) {
-        sstatus = 1;
         fill("red");
         stroke("red");
         circle(leftwristx, leftwristy, 10);
         if (song2.isPlaying()) {
             song2.stop();
             song1.play();
+            document.getElementById("song_name").innerHTML = "Song Name: Harry Potter";
         }
         else{
             if (song1.isPlaying()) {
@@ -44,17 +40,19 @@ function draw() {
             }
             else{
                 song1.play();
+                song2.stop();
+                document.getElementById("song_name").innerHTML = "Song Name: Harry Potter";
             }
         }
     }
     if (scorerw > 0.2) {
-        sstatus = 2;
         fill("blue");
         stroke("blue");
         circle(rightwristx, rightwristy, 10);
         if (song1.isPlaying()) {
             song1.stop();
-            song2.play();        
+            song2.play();
+            document.getElementById("song_name").innerHTML = "Song Name: Peter Pan";
         }
         else{
             if (song2.isPlaying()){
@@ -62,6 +60,8 @@ function draw() {
             }
             else{
                 song2.play();
+                song1.stop();
+                document.getElementById("song_name").innerHTML = "Song Name: Peter Pan";
             }
         }
     }
