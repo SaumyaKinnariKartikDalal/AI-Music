@@ -32,7 +32,7 @@ function draw() {
         if (song2.isPlaying()) {
             song2.stop();
             song1.play();
-            document.getElementById("song_name").innerHTML = "Song Name: Harry Potter";
+            document.getElementById("songName").innerHTML = "Song Name: Harry Potter";
         }
         else{
             if (song1.isPlaying()) {
@@ -41,7 +41,7 @@ function draw() {
             else{
                 song1.play();
                 song2.stop();
-                document.getElementById("song_name").innerHTML = "Song Name: Harry Potter";
+                document.getElementById("songName").innerHTML = "Song Name: Harry Potter";
             }
         }
     }
@@ -52,7 +52,7 @@ function draw() {
         if (song1.isPlaying()) {
             song1.stop();
             song2.play();
-            document.getElementById("song_name").innerHTML = "Song Name: Peter Pan";
+            document.getElementById("songName").innerHTML = "Song Name: Peter Pan";
         }
         else{
             if (song2.isPlaying()){
@@ -61,7 +61,7 @@ function draw() {
             else{
                 song2.play();
                 song1.stop();
-                document.getElementById("song_name").innerHTML = "Song Name: Peter Pan";
+                document.getElementById("songName").innerHTML = "Song Name: Peter Pan";
             }
         }
     }
